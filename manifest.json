@@ -1,0 +1,32 @@
+{
+    "name": "TwicasKey",
+    "version": "1",
+    "manifest_version": 3,
+    "description": "ツイキャスでのコメントをMisskeyにも投稿できます。",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://twitcasting.tv/*/broadcaster"
+            ],
+            "js": [
+                "./init.js"
+            ]
+        }
+    ],
+    "permissions": ["scripting","storage","tabs"],
+    "host_permissions": [
+        "https://twitcasting.tv/*/broadcaster"
+    ],
+    "background": {
+        "service_worker": "./serviceworker.js"
+    },
+    "action": {
+        "default_title": "TwicasKey",
+        "default_popup": "popup.html",
+        "default_icon": {
+	        "16": "./img/icon_16.png",
+	        "48": "./img/icon_48.png",
+            "128": "./img/icon_128.png"
+        }
+    }
+}
