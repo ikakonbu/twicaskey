@@ -1,3 +1,16 @@
+/*TODO 
+・投稿API投げたあとのレスポンス確認
+・エラーポップアップの実装
+・投稿時URLオプションの実装
+・投稿範囲の実装
+h1.options.selectedIndexで何番目か取得,変更できる
+<select name="example">
+<option>パブリック</option>
+<option>ホーム</option>
+<option>フォロワー</option>
+</select></div>
+*/
+
 window.addEventListener("load", function(){
     main();
 });
@@ -99,3 +112,4 @@ function settinginit(){
         document.querySelector('.twicaskey-setting .warningtext').classList.remove("show");
     }
 }
+
