@@ -1,36 +1,84 @@
 <!DOCTYPE HTML>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
 
 <style>
     body {
-        width: 500px;
+        width: 400px;
+    }
+    .flex {
+        display: flex;
+        align-items: center;
+    }
+    .iconlabel img{
+        width: 3em;
+    }
+    .flex-center{
+        justify-content: center;
+    }
+    .center{
+        text-align: center;
+    }
+    .tlfilter:before {
+        font-family: 'tabler-icons';
+        content: '\fb81';
+        margin-right: 0.5em;
+    }
+    .prof:before {
+        font-family: 'tabler-icons';
+        content: '\eb4d';
+        margin-right: 0.5em;
+    }
+    .other:before{
+        font-family: 'tabler-icons';
+        content: '\f91d';
+        margin-right: 0.4em;
+    }
+    .howto:before{
+        font-family: 'tabler-icons';
+        content: '\eac5';
+        margin-right: 0.4em;
+    }
+    .linkbtn{
+        text-align: center;
+        border-radius: 6px;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        font-size: 1.3em;
+        margin: 10px 30px;
+        & a{
+            display: block;
+            text-decoration: none;
+            color: #404040;
+            font-weight: 600;
+            padding: 10px 0;
+        }
+        transition: 0.5s;
+    }
+    .linkbtn:hover{
+        background: #d9e2ee;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+        transform: scale(1.02);
+        transition: ease-out 0.2s;
+    }
+    li {
+       margin-bottom: 0.5em;
     }
 </style>
 
 <body>
-   <h1>ついきゃすきー</h1>
+   <div class="flex flex-center iconlabel"><img src="img/icon_128.png"></img><h1>ついきゃすきー</h1></div>
    <h3>ツイキャスのコメントをMisskeyにも流します</h3>
 
-   <div class="twicaskey-setting">
-        <button clsss="close">x</button>
-        <h2>設定</h2>
-        <form>
-        <h3>投稿したいMisskeyのサーバー名</h3>
-        <input id='server' type="text">
-        <h3>アクセストークン</h3>
-        <input id='token' type="text">
-        <div>
-            <button class="savebtn">保存</button>
-        </div>
-        </form>
-    </div>
+   <h2 class="howto">使い方</h2>
+   <ul>
+    <li>ツイキャスの配信ページにアクセスします</li>
+   <li>設定画面に投稿したいサーバーと、アクセストークンを入力します</li>
+   <li>「Misskeyにも投稿」にチェックを入れて投稿すると、同じ内容をMisskeyにも投稿します</li>    
+   </ul>
 
-   <h3>設定のリセット</h3>
-   <p>うまく動作しないときは設定をリセットすると治る可能性があります</p>
-   <button>リセットする</button>
-
-    <h3>この拡張機能について</h3>
-    <p>この拡張機能は個人が趣味で開発しています。動かなかったり表示が崩れても怒らないでね///</p>
+   <h2 class="other">そのほか</h2>
+   <div class="linkbtn"><a class="prof" href="https://misskey.io/@ikakonbu" target="_blank" >作った人のプロフ</a></div>
+   <div class="linkbtn"><a class="tlfilter" href="https://chrome.google.com/webstore/detail/misskey-tl-filter/gligjcdfcokjfdkpmjgncgdoefnpkpej?hl=ja" target="_blank">Misskey向けフィルタリング拡張機能</a></div>
 </body>
