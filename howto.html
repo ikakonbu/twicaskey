@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+
+<style>
+
+    @font-face {
+        font-family: 'LINE Seed JP';
+        src: url('font/LINESeedJP_TTF_Rg.ttf');
+    }
+
+    @font-face {
+        font-family: 'LINE Seed JP Bold';
+        src: url('font/LINESeedJP_TTF_Bd.ttf');
+    }
+
+    body{
+        margin: 0 !important;
+        font-family: 'LINE Seed JP';
+        width: 400px;
+        background: #FDFBF7;
+        color: #136273;
+    }
+
+    .main{
+        padding: 0 18px;
+    }
+    
+    h1,h2{
+        color: #06313A;
+        font-family: 'LINE Seed JP Bold';
+    }
+
+    p {
+        padding: 1em 0;
+        font-size: 1.1em;
+    }
+    p~h2 {
+        padding-top: 2em;
+    }
+
+    h2 ~ p {
+        padding-top: 0;
+    }
+
+    img{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    h1{
+        border-bottom: solid 1px rgba(19,98,115,0.5);
+    }
+
+    .article-title h1{
+        display: flex;
+        align-items: center;
+        & i {
+            font-size: 1.4em;
+            margin-right: 0.4em;
+        }
+    }
+
+    a {
+        margin-top: 0.5em;
+        margin-left: 20px;
+        background: #F4ECDC;
+        text-decoration: none;
+        color: #136273;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        padding: 0.2em 1.3em;
+        border-radius: 10px;
+        padding-left: 0.6em;
+        transition: 0.4s;
+        & i {
+            font-size: 2em;
+        }
+    }
+    a:hover{
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+
+    header{
+        position: fixed;
+    }
+    .main{
+        padding-top: 50px;
+        margin-bottom: 30px;
+    }
+</style>
+
+
+<body>
+    <header><a href="popup.html"><i class="ti ti-chevron-left"></i><span>もどる</span></a></header>
+    <div class="main">
+        
+        <div class="article-title"><h1><i class="ti ti-zoom-question"></i><span>使い方と設定方法</span></h1></div>
+            <p> Misskeyに投稿する前に、投稿先のドメイン名とアクセストークンを設定する必要があります。</p>
+
+            <h2>サーバー名とアクセストークンの見つけ方</h2>
+            <p> はじめに、普段使っているMisskeyサーバーにアクセスしてください(TLが見れる画面)</p>
+            <img src="img/help-image1.png">
+            <p>ここで、アドレスの部分をクリックすると、今アクセスしているURLが見れます(Chromeの場合は２回クリックするとURLを全文表示してくれます)<br>ここで、https:// の後に続く文字がサーバー名になります。これがサーバー名になります。</p>
+            <p>次にアクセストークンを取得します。<br>Misskeyの設定に移動し、「API」という項目を探してクリックし、その中の「アクセストークンの発行」ボタンを押してください。</p>
+            <img src="img/help-image2.png">
+            <p>設定が開いたら、「ノートを作成、削除する」という項目にチェックを入れてOKしてください。</p>
+            <p>そうすると良くわからない数字と英語が出てくるので、それをコピーします。これがアクセストークンです。<br>(アクセストークンは１回しか表示されません。コピーしないで間違えてOKを押した場合は、もう一個作り直してください。)</p>
+            <p>アクセストークンを他人に知られるとあなたのアカウントを悪用される可能性があります。自分以外には教えないでください</p>
+
+            <h2>ツイキャスでの初期設定</h2>
+            <p>ツイキャスにアクセスして、「ブラウザ配信」もしくは「ツール配信」を開始します。この状態でコメント欄に「Misskey設定」が出てくるので、それをクリックして設定を開きます。</p>
+            <p>そしたら、先ほど調べたサーバー名とアクセストークンを入力し、保存ボタンを押します。これで設定が完了します</p>
+
+            <h2>コメントをMisskeyに投稿するときは...</h2>
+            <p>投稿したい時は、コメント入力欄下の「Misskeyにも投稿」にチェックを入れて、ツイキャスのコメント投稿ボタンをクリックしてください。</p>
+            <p>正しく投稿されると、右上に通知が出現します。</p>
+            <img src="img/help-image3.png">
+            <p>サーバー名やトークンの設定が間違っていたり、エラーで正常に投稿できなかった時は次のような表示が出ます</p>
+            <img src="img/help-image4.png">
+
+    </div>
+</body>

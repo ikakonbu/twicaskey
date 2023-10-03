@@ -6,9 +6,7 @@
     "content_scripts": [
         {
             "matches": [
-                "https://twitcasting.tv/*/broadcaster",
-                "https://twitcasting.tv/*/broadcastertool",
-                "https://twitcasting.tv/*/windowcomment/*"
+                "https://twitcasting.tv/*"
             ],
             "js": [
                 "./init.js"
@@ -17,7 +15,7 @@
     ],
     "permissions": ["scripting","storage","tabs"],
     "host_permissions": [
-        "https://twitcasting.tv/*/broadcaster"
+        "<all_urls>"
     ],
     "background": {
         "service_worker": "./serviceworker.js"

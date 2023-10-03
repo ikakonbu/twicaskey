@@ -2,83 +2,145 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <script src="popup.js"></script>
 </head>
 
 <style>
+    @font-face {
+        font-family: 'LINE Seed JP';
+        src: url('font/LINESeedJP_TTF_Rg.ttf');
+    }
+
+    @font-face {
+        font-family: 'LINE Seed JP Bold';
+        src: url('font/LINESeedJP_TTF_Bd.ttf');
+    }
+
     body {
+        background-image: url('img/main-background.png');
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
         width: 400px;
-    }
-    .flex {
-        display: flex;
-        align-items: center;
-    }
-    .iconlabel img{
-        width: 3em;
-    }
-    .flex-center{
-        justify-content: center;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     .center{
         text-align: center;
+        justify-content: center;
+        align-items: center;
     }
-    .tlfilter:before {
-        font-family: 'tabler-icons';
-        content: '\fb81';
-        margin-right: 0.5em;
+    .flex{
+        display: flex;
     }
-    .prof:before {
-        font-family: 'tabler-icons';
-        content: '\eb4d';
-        margin-right: 0.5em;
+    .title-icon{
+        margin: 20px auto 0;
     }
-    .other:before{
-        font-family: 'tabler-icons';
-        content: '\f91d';
-        margin-right: 0.4em;
+    img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        filter: drop-shadow(0 0 10px rgba(12, 41, 115, 0.37));
     }
-    .howto:before{
-        font-family: 'tabler-icons';
-        content: '\eac5';
-        margin-right: 0.4em;
-    }
-    .linkbtn{
-        text-align: center;
-        border-radius: 6px;
-        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
-        font-size: 1.3em;
-        margin: 10px 30px;
-        & a{
-            display: block;
-            text-decoration: none;
-            color: #404040;
-            font-weight: 600;
-            padding: 10px 0;
-        }
+    .main-title{
         transition: 0.5s;
+        transform: translateY(20px);
+        color: white;
+        opacity: 0;
     }
-    .linkbtn:hover{
-        background: #d9e2ee;
-        box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
-        transform: scale(1.02);
-        transition: ease-out 0.2s;
+    .main-title.show{
+        opacity: 1;
+        transform: translateY(0);
+        transition: 0.8s;
     }
-    li {
-       margin-bottom: 0.5em;
+    .title-text{
+        font-family: 'LINE Seed JP Bold';
+        font-size: 36px;
+        margin : 0;
     }
+    .subtitle{
+        margin-top : 0;
+        font-family: 'LINE Seed JP';
+    }
+    .main-menu {
+        background: #FDFBF7;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .menu-btns.show{
+        transform: none;
+        opacity: 1;
+        transition: ease-out 0.5s;
+    }
+    .menu-btns{
+        opacity: 0.4;
+        transform: scale(0.88);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        & i {
+            font-size: 34px;
+            margin-right: 10px;
+        }
+        & span{
+            width: 80px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+    }
+    .menu-btns a:hover{
+        transform: scale(1.05);
+        transition: 0.2s;
+    }
+    .menu-btns a:active{
+        box-shadow: none;
+        transform: scale(0.92);
+        transition: 0.1s;
+    }
+    .menu-btns a{
+        transition: 0.3s;
+    }
+    a{  
+        border: solid 2px #0E463F;
+        color: #06313A;
+        border-radius: 10px;
+        box-shadow: 0px 0px 12px 0px rgba(12, 41, 115, 0.37);
+        width: 160px;
+        height: 85px;
+        margin: 12px 0;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .cation-text {
+        margin-top: 10px;
+        color: #136273;
+        & i {
+            font-size: 2em;
+            margin-right: 6px;
+        }
+    }
+
 </style>
 
+
 <body>
-   <div class="flex flex-center iconlabel"><img src="img/icon_128.png"></img><h1>ついきゃすきー</h1></div>
-   <h3>ツイキャスのコメントをMisskeyにも流します</h3>
-
-   <h2 class="howto">使い方</h2>
-   <ul>
-    <li>ツイキャスの配信ページにアクセスします</li>
-   <li>設定画面に投稿したいサーバーと、アクセストークンを入力します</li>
-   <li>「Misskeyにも投稿」にチェックを入れて投稿すると、同じ内容をMisskeyにも投稿します</li>    
-   </ul>
-
-   <h2 class="other">そのほか</h2>
-   <div class="linkbtn"><a class="prof" href="https://misskey.io/@ikakonbu" target="_blank" >作った人のプロフ</a></div>
-   <div class="linkbtn"><a class="tlfilter" href="https://chrome.google.com/webstore/detail/misskey-tl-filter/gligjcdfcokjfdkpmjgncgdoefnpkpej?hl=ja" target="_blank">Misskey向けフィルタリング拡張機能</a></div>
+   <div class="main-title center">
+    <div class="title-icon center">
+        <img src="img/icon_128.png">
+    </div>
+    <h1 class="title-text">MissCasting</h1>
+    <h3 class="subtitle">ツイキャスのコメントをMisskeyにも投稿する<br>拡張機能</h3>
+   </div>
+   <div class="main-menu">
+    <div class="menu-btns">
+        <a href="howto.html"><i class="ti ti-zoom-question"></i><span id="howto">使い方と<br>設定方法</span></a>
+        <a href="https://chrome.google.com/webstore/detail/misskey-tl-filter/gligjcdfcokjfdkpmjgncgdoefnpkpej" target="_blank"><i class="ti ti-puzzle"></i><span id="howto">Misskey<br>向けの他の<br>拡張機能</span></a>
+        <a href="https://misskey.io/@ikakonbu" target="_blank"><i class="ti ti-address-book"></i><span id="howto">作った人の<br>Misskey</span></a>
+        <a href="https://github.com/ikakonbu/twicaskey" target="_blank"><i class="ti ti-brand-github"></i><span id="howto">Github<br>(ソース)</span></a>
+    </div>
+    <div class="cation-text  flex center">
+        <i class="ti ti-alert-circle"></i><span style="text-align: left;">この拡張機能は個人開発です<br>適当に作ってるのでバグるかもしれません</span>
+    </div>
+   </div>
 </body>
