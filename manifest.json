@@ -13,10 +13,7 @@
             ]
         }
     ],
-    "permissions": ["scripting","storage","tabs"],
-    "host_permissions": [
-        "<all_urls>"
-    ],
+    "permissions": ["scripting","tabs"],
     "background": {
         "service_worker": "./serviceworker.js"
     },
