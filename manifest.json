@@ -1,6 +1,6 @@
 {
-    "name": "TwicasKey",
-    "version": "1",
+    "name": "MissCasting",
+    "version": "1.0",
     "manifest_version": 3,
     "description": "ツイキャスでのコメントをMisskeyにも投稿できます。",
     "content_scripts": [
@@ -18,7 +18,7 @@
         "service_worker": "./serviceworker.js"
     },
     "action": {
-        "default_title": "TwicasKey",
+        "default_title": "MissCasting",
         "default_popup": "popup.html",
         "default_icon": {
 	        "16": "./img/icon_16.png",
